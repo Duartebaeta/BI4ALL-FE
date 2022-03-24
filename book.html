@@ -17,8 +17,8 @@
 			<a href="main.html" class="logo"></a>
 			<nav class="nav-bar">
 				<ul class="nav-list">
-					<li class="nav-items"><a href=# class="nav-links">Book</a></li>
-					<li class="nav-items"><a href=# class="nav-links">Cancel</a></li>
+					<li class="nav-items"><a href="book.html" class="nav-links">Book</a></li>
+					<li class="nav-items"><a href="cancel.html" class="nav-links">Cancel</a></li>
 				</ul>
 			</nav>
 		</div>
@@ -38,52 +38,62 @@
 			<iframe src="https://calendar.google.com/calendar/embed?src=gabriela2001freitas%40gmail.com&ctz=Europe%2FLisbon" id="calendar-url" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
 		</div>
 		<div class="container-book">
-			<form action="action_page.php">
-			  <div class="row">
+			<div class="row">
+			<div class="col-25">
+				<label for="name">Name</label>
+			</div>
+			<div class="col-75">
+				<input type="text" id="name" name="name" placeholder="Your name..">
+			</div>
+			</div>
+			<div class="row">
 				<div class="col-25">
-				  <label for="name">Name</label>
+				<label for="start">Date:</label>
 				</div>
 				<div class="col-75">
-				  <input type="text" id="name" name="name" placeholder="Your name..">
+					<input type="date" id="start" name="trip-start" value="2022-03-23" min="datetime-local" max="2030-12-31">
 				</div>
-			  </div>
-			  <div class="row">
-				  <div class="col-25">
-					<label for="start">Date:</label>
+			</div>
+			<div class="row">
+				<div class="col-25">
+					<label for="country">Start-Time</label>
 					</div>
 					<div class="col-75">
-						<input type="date" id="start" name="trip-start" value="2022-03-23" min="datetime-local" max="2030-12-31">
+					<input type="time" id="appt" name="appt" min="00:00" max="23:59" required>
+					</div>
+			</div>
+			<div class="row">
+				<div class="col-25">
+					<label for="country">End-Time</label>
+					</div>
+					<div class="col-75">
+					<input type="time" id="apptend" name="apptend" min="00:00" max="23:59" required>
 					</div>
 				</div>
-				<div class="row">
-					<div class="col-25">
-						<label for="country">Start-Time</label>
-					  </div>
-					  <div class="col-75">
-						<input type="time" id="appt" name="appt" min="00:00" max="23:59" required>
-					  </div>
+			<div class="row">
+				<div class="col-25">
+				<label for="people">Number of members:</label>
 				</div>
-				<div class="row">
-					<div class="col-25">
-						<label for="country">End-Time</label>
-					  </div>
-					  <div class="col-75">
-						<input type="time" id="apptend" name="apptend" min="00:00" max="23:59" required>
-					  </div>
-				  </div>
-				<div class="row">
-				  <div class="col-25">
-					<label for="people">Number of members:</label>
-				  </div>
-				  <div class="col-75">
-					<input type="number" id="quantity" name="quantity" min="2" max="4">
-				  </div>
+				<div class="col-75">
+				<input type="number" id="quantity" name="quantity" min="2" max="4">
 				</div>
-			  <div class="row">
-				<input type="submit" value="Submit">
-			  </div>
-			</form>
-		  </div>
+			</div>
+			<div class="row">
+			<input type="submit" value="Submit" onclick="httpGet('XXXXX')">
+			</div>
+		</div>
 	</section>
+	<script type="text/javascript">
+	function httpGet(param)
+	{
+		console.log("test");
+		const url = "https://script.google.com/macros/s/AKfycbxXBGs56pBrhcgwHg2MQmh5zPJCvvrN1AJz8vz7a19nstMhy6j6R9K7YlAZohkMrHMz-g/exec?param1=" + `"` + param + `"`;
+
+		var xmlHttp = new XMLHttpRequest();
+		xmlHttp.open( "GET", url, false ); // false for synchronous request
+		xmlHttp.send( null );
+		return xmlHttp.responseText;
+	}
+	</script>
 </body>
 </html>

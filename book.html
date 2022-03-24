@@ -24,8 +24,18 @@
 		</div>
 	</header>
 	<section class="book-content">
+		<div class="room-button">
+			<form action="backend.js">
+				<div class="col-25">
+					<label for="rooms">Room Number</label>
+				</div>
+				<div class="change-room">
+					<input type="number" placeholder="1" id="room-changer" name="room" min="0" max="5">
+				</div>
+			</form>
+		</div>
 		<div class="calendar">
-			<iframe src="https://calendar.google.com/calendar/embed?src=gabriela2001freitas%40gmail.com&ctz=Europe%2FLisbon" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+			<iframe src="https://calendar.google.com/calendar/embed?src=gabriela2001freitas%40gmail.com&ctz=Europe%2FLisbon" id="calendar-url" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
 		</div>
 		<div class="container-book">
 			<form action="action_page.php">
@@ -69,14 +79,6 @@
 					<input type="number" id="quantity" name="quantity" min="2" max="4">
 				  </div>
 				</div>
-			  <div class="row">
-				<div class="col-25">
-					<label for="rooms">Sala nº:</label>
-				</div>
-				<div class="col-75">
-					<input type="number" id="room" name="room" min="1" max="5">
-				</div>
-			  </div>
 			  <div class="row">
 				<input type="submit" value="Submit">
 			  </div>

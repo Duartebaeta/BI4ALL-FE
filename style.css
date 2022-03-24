@@ -162,8 +162,10 @@ header::after {
 .book-content {
 	display: flex;
 
-	justify-content: flex-end;
+	flex-direction: row;
+	justify-content: space-around;
 
+	margin-top: 25px;
 }
 
 /* Style inputs, select elements and textareas */
@@ -193,6 +195,14 @@ input[type=text], select, textarea{
 	float: right;
   }
   
+  input[type=change] {
+	  background-color: #04AA6D;
+	  color: white;
+	  padding: 6px 15px;
+	  width: 20%;
+	  cursor: pointer;
+  }
+
   /* Style the container */
   .container-book {
 	display: flex;
@@ -201,6 +211,7 @@ input[type=text], select, textarea{
 	border-radius: 5px;
 	background-color: #f2f2f2;
 	padding: 20px;
+	margin-bottom: 10rem;
   }
   
   /* Floating column for labels: 25% width */
@@ -208,6 +219,7 @@ input[type=text], select, textarea{
 	float: left;
 	width: 25%;
 	margin-top: 6px;
+	margin-right: 40px;
   }
   
   /* Floating column for inputs: 75% width */
@@ -223,11 +235,34 @@ input[type=text], select, textarea{
 	display: table;
 	clear: both;
   }
-  
+
+.row {
+	display: flex;
+
+	align-items: center;
+}
+
   /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
   @media screen and (max-width: 600px) {
 	.col-25, .col-75, input[type=submit] {
 	  width: 100%;
 	  margin-top: 0;
 	}
+}
+
+.room-button {
+	border-radius: 1rem;
+	border: 1px solid #ccc;
+	background-color: #f2f2f2;
+	height: 10%;
+
+	padding: 1px 20px;
+}
+
+.change-room {
+	display: flex;
+
+	justify-content: flex-end;
+	align-items: center;
+	padding-top: 13px;
 }
